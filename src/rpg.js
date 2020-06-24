@@ -4,12 +4,12 @@ export const storeState = () => {
   let currentState = {};
   return (stateChangeFunction) => {
     const newState = stateChangeFunction(currentState);
-    currentState = {...newState};
-    return newState;
+    const levelModifiedState = changeLevel(newState);
+    currentState = {...levelModifiedState}
+    return levelModifiedState;
   };
 };
 
-//export const stateChanger = storeState();
 
 // Declare "Characters"
 
@@ -29,11 +29,19 @@ export const giant = storeState();
   };
 };
 
+export const changeLevelState = (prop) => {
+  return (state) => ({
+    ...state,
+    [prop] : Math.floor(state.points/30)
+  });
+};
+
+
 /// Points for each Ability------------------
 
 export const changePoints = changeState("points");
 export const changeHealth = changeState("health");
-
+export const changeLevel = changeLevelState("level");
 
 
 
