@@ -1,23 +1,21 @@
-# _Project Template_
+# _RPG Game_
 
-#### _A set of folders and files comprising the basic needs for a new Epicodus project. Files have the necessary plugins, rules, and imports pre-configured._
-
-#### By _**Daniel Merys**_
+#### By _**Chee Murakami, Chris Huber, Celeste Field**_
 
 ## Description
 
-_This repository allows you to pull the files for use in your own project, including (__ tests __/.., src/.., .babelrc, .eslintrc, .gitignore, package-lock.json, package.json, webpack.config.js)_
+_Role playing game that allows the users to pick a character and use various ablities to improve their scores._
 
 ## Setup/Installation Requirements
 
 1. Fork this repository to your github account.
 2. Copy it from your github to your machine
-3. Rename files ("__ tests __/app-name.test.js" and "src/app-name.js") to match your project.
+3. Rename files ("__ tests __/rpg_game.test.js" and "src/rpg_game.js") to match your project.
 4. Be sure to update the git repository and remote repository you are committing to.
 * check origin
 `git remote -v`
 * if origin is not your repository, set origin to your repository
-`git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git`  
+`git remote set-url origin https://github.com/fieldceleste/rpg_game.git`  
 5. Update the author and project name in both package.json and webpack.config.js
 6. Install packages
 `run $ npm install`
@@ -48,7 +46,7 @@ ESLint
 ### Specs
 | Files                      |                 |                         |                   |
 |----------------------------|-----------------|-------------------------|-------------------|
-| __ tests __/app-name.test.js | src/app-name.js | src/index.html          | src/main.js       |
+| __ tests __/rpg_game.test.js | src/rpg_game.js | src/index.html          | src/main.js       |
 | src/styles.css             | .babelrc        | .eslintrc               | .gitignore        |
 | package.lock.json          | package.json    | README.md (update this) | webpack.config.js |
 
@@ -58,4 +56,35 @@ ESLint
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2020 **_Daniel Merys_**
+Copyright (c) 2020 **_Chee Murakami, Chris Huber, Celeste Field_**
+
+
+
+
+Characters To choose-
+
+1. Dragon 
+2. Elf
+3. Giant
+4. Pixie
+
+
+
+
+Abilities
+
+1. Dragon - fireBreath
+            slash
+            bite
+
+2. Elf-     kick
+            punch
+            arrow
+
+3. Giant-   stomp
+            throwBoulder
+            FeFiFoFum
+
+4. Pixie-   Pixiedust
+            mischief
+            dance
