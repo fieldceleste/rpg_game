@@ -2,76 +2,119 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { blueFood, greenFood, badFood, goodWater, badWater, sunLight, noSunLight,superBloom,badBloom, fern, daffodil } from './rpg.js';
+import { dragon, giant, pixie, elf, changePoints, } from './rpg.js';
 
 $(document).ready(function () {
 
   // This function has side effects because we are using jQuery. Manipulating the DOM will always be a side effect.
-  $('#feed-f').click(function () {
-    const newState = fern(blueFood);
-    $('#food-fern').text(newState.soil);
-  });
-  $('#feed1-f').click(function () {
-    const newState = fern(greenFood);
-    $('#food-fern').text(newState.soil);
-  });
-  $('#feed2-f').click(function () {
-    const newState = fern(badFood);
-    $('#food-fern').text(newState.soil);
+
+  // Dragon Abilities
+  $('#fireBreath').click(function () {
+    const dragonTarget = $('input[name="dragonTarget"]:checked').val();
+    if (dragonTarget === "elf")
+    {
+      const newElf = elf(changePoints(-5));
+      $('#elfPoints').text(newElf.points);
+    }
+    else 
+    {
+      const newPixie = pixie(changePoints(-5));
+      $('#pixiePoints').text(newPixie.points);
+    }
+    const newState = dragon(changePoints(10));
+    $('#dragonPoints').text(newState.points);
   });
 
-  $('#water-f').click(function () {
-    const newState = fern(goodWater);
-    $('#water-fern').text(newState.water);
+
+  $('#slash').click(function () {
+    const newState = dragon(changePoints(5));
+    $('#dragonPoints').text(newState.points);
   });
-  $('#water1-f').click(function () {
-    const newState = fern(badWater);
-    $('#water-fern').text(newState.water);
-  });
-  $('#light-f').click(function () {
-    const newState = fern(sunLight);
-    $('#light-fern').text(newState.light);
-  });
-  $('#light1-f').click(function () {
-    const newState = fern(noSunLight);
-    $('#light-fern').text(newState.light);
+  $('#bite').click(function () {
+    const newState = dragon(changePoints(3));
+    $('#dragonPoints').text(newState.points);
   });
 
-  // <-------------------Daffodil---------------------------------------->
-  $('#water1').click(function () {
-    const newState = daffodil(goodWater);
-    $('#water-diffodil').text(newState.water);
+  // Elf Abilities
+
+  $('#kick').click(function () {
+    const newState = elf(changePoints(3));
+    $('#elfPoints').text(newState.points);
   });
-  $('#water2').click(function () {
-    const newState = daffodil(badWater);
-    $('#water-diffodil').text(newState.water);
+  $('#punch').click(function () {
+    const elfTarget = $('input[name="elfTarget"]:checked').val();
+    if (elfTarget === "dragon")
+    {
+      const newDragon = dragon(changePoints(-5));
+      $('#dragonPoints').text(newDragon.points);
+    }
+    else 
+    {
+      const newGiant = giant(changePoints(-5));
+      $('#giantPoints').text(newGiant.points);
+    }
+    const newState = elf(changePoints(5));
+    $('#elfPoints').text(newState.points);
   });
-  $('#feed1').click(function () {
-    const newState = daffodil(blueFood);
-    $('#food-daffodil').text(newState.soil);
+  $('#arrow').click(function () {
+    const newState = elf(changePoints(10));
+    $('#elfPoints').text(newState.points);
   });
-  $('#feed2').click(function () {
-    const newState = daffodil(greenFood);
-    $('#food-daffodil').text(newState.soil);
+
+// Giant Abilities
+  
+  $('#stomp').click(function () {
+    const giantTarget = $('input[name="giantTarget"]:checked').val();
+    if (giantTarget === "elf")
+    {
+      const newElf = elf(changePoints(-10));
+      $("#elfPoints").text(newElf.points);
+    }
+    else
+    {
+      const newPixie = pixie(changePoints(-10));
+      $("#pixiePoints").text(newPixie.points);
+    }
+    const newState = giant(changePoints(10));
+    $('#giantPoints').text(newState.points);
   });
-  $('#feed3').click(function () {
-    const newState = daffodil(badFood);
-    $('#food-daffodil').text(newState.soil);
+
+  $('#throwBoulder').click(function () {
+    const newState = giant(changePoints(5));
+    $('#giantPoints').text(newState.points);
   });
-  $('#light1').click(function () {
-    const newState = daffodil(sunLight);
-    $('#light-daffodil').text(newState.light);
+  $('#feFiFoFum').click(function () {
+    const newState = giant(changePoints(3));
+    $('#giantPoints').text(newState.points);
   });
-  $('#light2').click(function () {
-    const newState = daffodil(noSunLight);
-    $('#light-daffodil').text(newState.light);
+
+// Pixie Abilities
+
+$('#mischief').click(function () {
+
+  const pixieTarget = $('input[name="pixieTarget"]:checked').val();
+  if (pixieTarget === "dragon")
+  {
+    const newDragon = dragon(changePoints(-5));
+    $('#dragonPoints').text(newDragon.points);
+  }
+  else 
+  {
+    const newGiant = giant(changePoints(-5));
+    $('#giantPoints').text(newGiant.points);
+  }
+  
+  const newState = pixie(changePoints(10));
+  $('#pixiePoints').text(newState.points);
+});
+  
+  $('#dance').click(function () {
+    const newState = pixie(changePoints(3));
+    $('#pixiePoints').text(newState.points);
   });
-  $('#bloom1').click(function () {
-    const newState = daffodil(superBloom);
-    $('#bloom-daffodil').text(newState.bloom);
+  $('#pixieDust').click(function () {
+    const newState = pixie(changePoints(5));
+    $('#pixiePoints').text(newState.points);
   });
-  $('#bloom2').click(function () {
-    const newState = daffodil(badBloom);
-    $('#bloom-daffodil').text(newState.bloom);
-  });
+  
 });

@@ -69,22 +69,28 @@ Characters To choose-
 4. Pixie
 
 
+Abilities   Function           Inventory
 
+1. Dragon - fireBreath-10      scale
+            slash-5            treasure
+            bite-3             egg
 
-Abilities
+2. Elf-     kick-3             
+            punch-5
+            arrow-10
 
-1. Dragon - fireBreath
-            slash
-            bite
+3. Giant-   stomp-10
+            throwBoulder-5
+            FeFiFoFum-3
 
-2. Elf-     kick
-            punch
-            arrow
+4. Pixie-   Pixiedust-5
+            mischief-10
+            dance- 3
 
-3. Giant-   stomp
-            throwBoulder
-            FeFiFoFum
+Points are greater than 200- they win
 
-4. Pixie-   Pixiedust
-            mischief
-            dance
+Level 1- 20>
+Level 2- 50> 
+Level 3- 80>
+Level 4- 100>
+Level 5- 150>
